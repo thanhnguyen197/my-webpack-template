@@ -1,12 +1,10 @@
 import React from 'react';
 import Counter from 'Components/Counter';
-import {getSum} from 'Utils/index';
 import Banner from 'Components/Banner';
 import image from 'Assets/images/react.png';
 import narrow from 'Assets/svg/4-narrow.svg';
 
 const App = () => {
-    const res = getSum(5, 6);
     let a = 5;
 
     return (
@@ -17,7 +15,6 @@ const App = () => {
             <img src={image} alt='react' width={400} />
             <img src={narrow} alt='narrow' width={400} />
             <Counter />  
-            <div>res: {res}</div>
             <Banner />
         </>
     );
