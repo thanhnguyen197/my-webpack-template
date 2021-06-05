@@ -1,0 +1,47 @@
+label {
+    display: flex;
+}
+
+input[type="text"],
+input[type="password"] {
+    min-width: 200px;
+    border-radius: 3px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    outline-color: aquamarine;
+    color: #555;
+}
+
+.form-control {
+    margin-bottom: 15px;
+
+    .radio-group {
+        display: flex;
+        flex-direction: column;
+
+        .radio-item {
+            display: flex;
+        }
+    }
+}
+
+.control {
+    font-size: 15px;
+    font-family: Times, "Times New Roman", Times, serif;
+}
+
+.textarea-control {
+    min-width: 200px;
+    border-radius: 3px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    color: #555;
+}
+
+.field-label {
+    margin-bottom: 6px;
+}
+
+.field-error {
+    color: red;
+}

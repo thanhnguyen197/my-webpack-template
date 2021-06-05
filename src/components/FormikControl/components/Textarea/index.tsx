@@ -1,25 +1,24 @@
-// Libraries
 import React from 'react';
 import {Field, ErrorMessage} from 'formik';
 
-// components
+// Components
 import TextError from 'Components/FormikControl/components/TextError';
 
-const Input:React.FC<any> = (props) => {
+const Textarea:React.FC<any> = (props) => {
     const {label, name, ...rest} = props;
 
     return (
         <div className='form-control'>
             {label ? <label className='field-label' htmlFor={name}>{label}</label> : null}
-            <Field id={name} name={name} {...rest} />
+            <Field as='textarea' id={name} name={name} {...rest} />
             <ErrorMessage name={name} component={TextError} />
         </div>
     );
 };
 
-Input.defaultProps = {
+Textarea.defaultProps = {
     label: '',
-    name: 'input'
+    name: 'textarea'
 };
 
-export default Input;
+export default Textarea;
