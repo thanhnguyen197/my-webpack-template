@@ -6,13 +6,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     entry: path.resolve(__dirname, '..', './src/index.tsx'),
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.jsx', '.js'],
         alias: {
-            Src: path.resolve(__dirname, '..', 'src'),
+            src: path.resolve(__dirname, '..', 'src'),
             Assets: path.resolve(__dirname, '..', 'src/assets/'),
             Components: path.resolve(__dirname, '..', 'src/components/'),
             Hooks: path.resolve(__dirname, '..', 'src/hooks'),
             Utils: path.resolve(__dirname, '..', 'src/utils'),
+            Modules: path.resolve(__dirname, '..', 'src/modules'),
             react: require.resolve('react')
         }
     },
@@ -28,9 +29,9 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: 'babel-loader',
-                    },
-                ],
+                        loader: 'babel-loader'
+                    }
+                ]
             },
             {
                 test: /\.css$/,
@@ -55,7 +56,7 @@ module.exports = {
                             importLoaders: 1,
                             modules: {
                                 compileType: 'module',
-                                localIdentName: 'ntt-[local]-[hash:base64:5]',
+                                localIdentName: 'ntt-[local]-[hash:base64:5]'
                             },
                             sourceMap: true
                         }
@@ -71,19 +72,19 @@ module.exports = {
             },
             {
                 test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-                type: 'asset/resource',
+                type: 'asset/resource'
             },
             {
                 test: /\.svg$/,
                 type: 'asset/inline'
             }
-        ],
+        ]
     },
     plugins: [
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '..', './public/index.html'),
-        }),
+            template: path.resolve(__dirname, '..', './public/index.html')
+        })
     ],
     stats: {
         children: true
