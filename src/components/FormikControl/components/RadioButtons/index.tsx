@@ -4,7 +4,13 @@ import {Field, ErrorMessage} from 'formik';
 // components
 import TextError from 'Components/FormikControl/components/TextError';
 
-const RadioButtons:React.FC<any> = (props) => {
+interface IRadioButtons {
+    label?: string;
+    name: string;
+    options: Array<any>;
+}
+
+const RadioButtons:React.FC<IRadioButtons> = (props) => {
     const {label, name, options, ...rest} = props;
 
     return (

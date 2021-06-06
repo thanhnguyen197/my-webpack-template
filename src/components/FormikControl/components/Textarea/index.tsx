@@ -4,7 +4,23 @@ import {Field, ErrorMessage} from 'formik';
 // Components
 import TextError from 'Components/FormikControl/components/TextError';
 
-const Textarea:React.FC<any> = (props) => {
+export interface ITextarea {
+    label?: string;
+    name: string;
+    type?: string;
+    className?:string
+    required?:boolean;
+    minLength?:string | number;
+    maxLength?:string | number;
+    size?:string | number;
+    readOnly?:boolean; 
+    placeholder?:string; 
+    cols?: string | number;
+    rows?: string | number;
+    autocomplete?: string;
+}
+
+const Textarea:React.FC<ITextarea> = (props) => {
     const {label, name, ...rest} = props;
 
     return (

@@ -4,6 +4,12 @@ import {Field, ErrorMessage} from 'formik';
 // components
 import TextError from 'Components/FormikControl/components/TextError';
 
+interface ICheckboxGroup {
+    label?: string;
+    name: string;
+    options?: Array<any>;
+}
+
 const CheckboxGroup:React.FC<any> = (props) => {
     const {label, name, options, ...rest} = props;
 

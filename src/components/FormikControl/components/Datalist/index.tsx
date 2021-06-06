@@ -1,11 +1,18 @@
 // Libraries
-import React, {Fragment} from 'react';
+import React from 'react';
 import {Field, ErrorMessage} from 'formik';
 
 // components
 import TextError from 'Components/FormikControl/components/TextError';
 
-const Datalist:React.FC<any> = (props) => {
+interface IDatalist {
+    label?: string;
+    name: string;
+    list: string;
+    options: Array<any>;
+}
+
+const Datalist:React.FC<IDatalist> = (props) => {
     const {label, list, name, options, ...rest} = props;
 
     return (

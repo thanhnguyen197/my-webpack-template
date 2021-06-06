@@ -41,8 +41,9 @@ const LoginForm:React.FC = () => {
         // comments: Yup.string().required('Please enter you comments')
     });
 
-    const onSubmit = (values:any) => {
-        console.log('onSubmit', values);
+    const onSubmit = async (values:any) => {
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        alert(`onSubmit ${JSON.stringify(values, null, 2)}`);
     };
 
     return (
@@ -60,11 +61,12 @@ const LoginForm:React.FC = () => {
                     className='control'
                     required={true}
                     minLength='6'
+                    autoFocus={true}
                 />
-                <FormikControl
+                {/* <FormikControl
                     control='input'
                     type="text"
-                />
+                /> */}
                 <FormikControl
                     control='input'
                     type="password"
@@ -80,6 +82,9 @@ const LoginForm:React.FC = () => {
                     name='comments'
                     className='textarea-control'
                     required={true}
+                    placeholder='comments'
+                    cols={40}
+                    autoCorrect='on'
                 />
                 <FormikControl 
                     control='datalist'

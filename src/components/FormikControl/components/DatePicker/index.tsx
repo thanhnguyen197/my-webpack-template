@@ -7,7 +7,12 @@ import 'react-datepicker/dist/react-datepicker.css';
 // components
 import TextError from 'Components/FormikControl/components/TextError';
 
-const DatePicker:React.FC<any> = (props) => {
+interface IDatePicker {
+    label?: string;
+    name: string;
+}
+
+const DatePicker:React.FC<IDatePicker> = (props) => {
     const {label, name, ...rest} = props; 
 
     return (

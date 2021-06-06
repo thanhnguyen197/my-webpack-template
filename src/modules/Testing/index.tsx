@@ -1,13 +1,13 @@
-import React, {FC} from 'react';
+import React from 'react';
 
 // image
-import image from 'Assets/images/react.png';
-import narrow from 'Assets/svg/4-narrow.svg';
+// import image from 'Assets/images/react.png';
+// import narrow from 'Assets/svg/4-narrow.svg';
 
 // components
 import LoginForm from 'Modules/Testing/components/LoginForm';
 
-const Testing:FC = () => {
+const Testing:React.FC = () => {
     return (
         <div>
             {/* <div>Evironment: {process.env.NODE_ENV}</div>
